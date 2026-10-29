@@ -1,0 +1,266 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================================================
+   1. COLOR VARIABLES & NORD PASTEL THEME
+   ========================================================================== */
+:root {
+    --color-primary: #5E81AC;      /* Pastel Steel Blue */
+    --color-secondary: #88C0D0;    /* Soft Sky Blue */
+    --color-hover: #81A1C1;        /* Hover Accent Blue */
+    
+    --bg-main: #F8FAFC;            /* Clean light page background */
+    --bg-card: #FFFFFF;            /* White card background */
+    
+    --text-primary: #2E3440;      /* Dark slate text */
+    --text-secondary: #5C677D;    /* Subtitle text */
+    
+    --border-color: #D8DEE9;
+    --border-radius-lg: 20px;
+    --border-radius-sm: 8px;
+    
+    --shadow-soft: 0 15px 35px rgba(46, 52, 64, 0.08);
+    --shadow-input: 0 2px 6px rgba(0, 0, 0, 0.02);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--text-primary);
+    background-color: #172B40;
+
+    /* Industrial factory background */
+    background-image:
+        linear-gradient(
+            135deg,
+            rgba(10, 27, 46, 0.45),
+            rgba(31, 54, 77, 0.20),
+            rgba(10, 27, 46, 0.50)
+        ),
+        url("https://www.hp.com/content/dam/sites/worldwide/printers/3d-printers/learning-center/10_metal-additive-manufacturing/Metal%203D%20printed%20parts.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. MAIN CONTAINER & SPLIT-PANEL CARD
+   ========================================================================== */
+/* Wrapper pushes container down clear of fixed navbar */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    min-height: calc(100vh - 80px);
+}
+
+.login-card {
+    display: flex !important;
+    flex-direction: row !important; /* Force side-by-side layout */
+    width: 85% !important;
+    height: 550px;
+    max-width: 1000px;
+    border-radius: var(--border-radius-lg) !important;
+    border: 1px solid var(--border-color) !important;
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
+/* Left Panel - Visual & Branding */
+.left-panel {
+    width: 45%;
+    min-height: 530px;
+    background: linear-gradient(135deg, rgba(94, 129, 172, 0.75), rgba(136, 192, 208, 0.75)),
+                url("https://smartsolfze.net/wp-content/uploads/2023/11/factory-manage_Banner.jpg") no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+/* Top Badge on Image */
+.brand-badge {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #000080;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 50rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+/* Bottom Caption on Image */
+.panel-footer-text h4 {
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+ 
+}
+
+.panel-footer-text p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+/* Right Panel - Login Form Container */
+.right-panel {
+    width: 55%;
+    padding: 50px 45px;
+    background: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY & LINKS
+   ========================================================================== */
+.right-panel h1 {
+    font-size: 1.8rem !important;
+    font-weight: 700;
+    color: var(--text-primary) !important;
+    letter-spacing: -0.02em;
+}
+
+.right-panel p {
+    color: var(--text-secondary) !important;
+    font-size: 0.92rem;
+}
+
+.right-panel a {
+    color: var(--color-primary) !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.right-panel a:hover {
+    color: var(--color-hover) !important;
+    text-decoration: underline;
+}
+
+.forgot-password-link {
+    font-size: 0.82rem;
+    font-weight: 500 !important;
+}
+
+/* ==========================================================================
+   4. FORM INPUTS & ICON GROUPS
+   ========================================================================== */
+.form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.input-group-text {
+    background-color: var(--bg-main) !important;
+    border: 1.5px solid var(--border-color) !important;
+    border-right: none !important;
+    color: var(--color-primary) !important;
+    border-top-left-radius: var(--border-radius-sm) !important;
+    border-bottom-left-radius: var(--border-radius-sm) !important;
+    padding-left: 14px;
+    padding-right: 10px;
+}
+
+.form-control {
+    height: 46px !important;
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0 !important;
+    font-size: 0.9rem !important;
+    padding: 8px 14px !important;
+    background-color: var(--bg-main) !important;
+    border: 1.5px solid var(--border-color) !important;
+    border-left: none !important;
+    color: var(--text-primary) !important;
+    transition: var(--transition-smooth) !important;
+    box-shadow: var(--shadow-input);
+}
+
+.input-group:focus-within .input-group-text,
+.input-group:focus-within .form-control {
+    background-color: #FFFFFF !important;
+    border-color: var(--color-secondary) !important;
+}
+
+.input-group:focus-within {
+    box-shadow: 0 0 0 4px rgba(136, 192, 208, 0.2) !important;
+    border-radius: var(--border-radius-sm);
+}
+
+.form-control::placeholder {
+    color: #A0AEC0;
+    font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   5. BUTTON STYLING
+   ========================================================================== */
+.btn-primary {
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-hover)) !important;
+    border: none !important;
+    border-radius: var(--border-radius-sm) !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 12px rgba(94, 129, 172, 0.25);
+    transition: var(--transition-smooth) !important;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-hover), var(--color-secondary)) !important;
+    box-shadow: 0 6px 18px rgba(136, 192, 208, 0.35) !important;
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .login-wrapper {
+        padding-top: 80px;
+    }
+
+    .login-card {
+        width: 92% !important;
+        flex-direction: column !important;
+    }
+
+    .left-panel {
+        width: 100%;
+        min-height: 200px;
+        padding: 25px;
+    }
+
+    .right-panel {
+        width: 100%;
+        padding: 35px 25px;
+    }
+}

@@ -1,0 +1,29 @@
+# Java compiled files
+
+*.class
+
+# Maven build output
+
+target/
+**/target/
+
+# Eclipse and Spring Tool Suite
+
+.settings/
+.classpath
+.project
+
+# IDE files
+
+.idea/
+.vscode/
+
+# Log files
+
+*.log
+
+# Environment files containing secrets
+
+.env
+.env.*
+!.env.example

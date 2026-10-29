@@ -1,0 +1,115 @@
+@charset "ISO-8859-1";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   1. COLOR VARIABLES & CORE RESETS
+   ========================================================================== */
+:root {
+    --nav-bg-pastel: #F8FAFC;      /* Soft Light Pastel Background */
+    --nav-link-dark: #2E3440;      /* Dark High-Contrast Text for Nav Links */
+    
+    --color-primary: #5E81AC;      /* Pastel Steel Blue (Brand & Hover) */
+    --color-secondary: #88C0D0;    /* Soft Sky Blue (Tool Accent) */
+    --color-hover: #81A1C1;        /* Secondary Hover Blue */
+    
+    --border-light: #E5E9F0;       /* Light Subtle Border */
+    --transition-smooth: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. NAVBAR CONTAINER (LIGHT PASTEL BACKGROUND)
+   ========================================================================== */
+.custom-navbar {
+    background-color: var(--nav-bg-pastel) !important;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 0.75rem 1.75rem;
+    transition: var(--transition-smooth);
+}
+
+.navbar-toggler {
+    border: 1px solid var(--border-light);
+    padding: 0.4rem 0.6rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(46,52,64,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* ==========================================================================
+   3. BRAND LOGO STYLING (LOCKED NAVY & SKY BLUE)
+   ========================================================================== */
+.navbar-brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-decoration: none !important;
+}
+
+.navbar-brand i,
+.navbar-brand .brand-text {
+    color: var(--color-primary) !important; /* Steel Blue */
+}
+
+.navbar-brand .brand-accent {
+    color: var(--color-secondary) !important; /* Sky Blue */
+}
+
+/* Lock colors on hover */
+.navbar-brand:hover i,
+.navbar-brand:hover .brand-text {
+    color: var(--color-primary) !important;
+}
+
+.navbar-brand:hover .brand-accent {
+    color: var(--color-secondary) !important;
+}
+
+/* ==========================================================================
+   4. NAVIGATION LINKS (DARK TEXT WITH PASTEL HOVER EFFECT)
+   ========================================================================== */
+.custom-navbar .nav-link {
+    color: var(--nav-link-dark) !important; /* Dark readable text */
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.1rem !important;
+    border-radius: 6px;
+    letter-spacing: 0.2px;
+    transition: var(--transition-smooth);
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: var(--color-primary) !important; /* Changes to Steel Blue on hover */
+    background-color: rgba(94, 129, 172, 0.1); /* Light subtle highlight */
+}
+
+/* ==========================================================================
+   5. REGISTER & LOGIN BUTTONS (MATCHING OUTLINE STYLES)
+   ========================================================================== */
+.btn-nav-register,
+.btn-nav-login {
+    background-color: transparent;
+    color: var(--color-primary) !important;
+    border: 1.5px solid var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.45rem 1.25rem;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+}
+
+.btn-nav-register:hover,
+.btn-nav-login:hover {
+    background-color: var(--color-primary);
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(94, 129, 172, 0.25);
+}
