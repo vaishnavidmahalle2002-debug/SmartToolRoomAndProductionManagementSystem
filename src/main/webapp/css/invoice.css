@@ -1,0 +1,164 @@
+@charset "ISO-8859-1";
+
+/* ===============================
+   Invoice Management
+   YantraX
+=================================*/
+
+body{
+    background:#f4f7fb;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+/* Card */
+
+.card{
+    border:none;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+/* Header */
+
+.invoice-header{
+    background:linear-gradient(90deg,#0077b6,#00b4d8);
+    padding:12px 20px;
+}
+
+.invoice-header h5{
+    font-weight:600;
+    font-size:18px;
+}
+
+/* Badge */
+
+.badge{
+    width:28px;
+    height:28px;
+    line-height:20px;
+    border-radius:50%;
+    font-size:14px;
+}
+
+/* Form */
+
+.card-body h6{
+    font-size:15px;
+    font-weight:600;
+    color:#222;
+    margin-bottom:20px;
+}
+
+label{
+    font-size:14px;
+    font-weight:600;
+    color:#333;
+}
+
+.form-control,
+.form-select{
+
+    border-radius:6px;
+    font-size:14px;
+    height:38px;
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:#00b4d8;
+    box-shadow:0 0 5px rgba(0,180,216,.3);
+
+}
+
+/* Readonly */
+
+input[readonly]{
+
+    background:#f8f9fa;
+    font-weight:600;
+}
+
+/* Buttons */
+
+.btn-success{
+
+    background:#2db84d;
+    border:none;
+    width:110px;
+    font-weight:600;
+}
+
+.btn-success:hover{
+
+    background:#24963d;
+}
+
+.btn-secondary{
+
+    width:110px;
+    font-weight:600;
+}
+
+/* Illustration */
+
+.invoice-image img{
+
+    max-height:220px;
+}
+
+.invoice-image h5{
+
+    color:#666;
+    margin-top:15px;
+    font-weight:600;
+}
+
+.invoice-image h1{
+
+    color:#2db84d;
+    font-size:48px;
+    font-weight:bold;
+}
+
+/* Total Amount */
+
+#totalAmount{
+
+    font-size:16px;
+    color:#198754;
+}
+
+/* Card Shadow */
+
+.shadow-lg{
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12)!important;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .invoice-image{
+
+        margin-top:40px;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:768px){
+
+    label{
+
+        margin-bottom:8px;
+    }
+
+    .btn{
+
+        width:100%;
+        margin-top:10px;
+    }
+
+}

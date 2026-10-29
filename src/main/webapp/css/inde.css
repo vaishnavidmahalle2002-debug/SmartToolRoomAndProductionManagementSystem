@@ -1,0 +1,819 @@
+@charset "ISO-8859-1";
+
+:root {
+    /* Palette definition */
+    --color-primary: #5E81AC;      /* Pastel Steel Blue */
+    --color-secondary: #88C0D0;    /* Soft Sky Blue */
+    --color-accent: #A3BE8C;       /* Pastel Sage Green */
+    --color-highlight: #EBCB8B;    /* Soft Warm Gold */
+    --color-hover: #81A1C1;        /* Hover Accent */
+    
+    /* Surfaces & Layout */
+    --bg-main: #F8FAFC;            /* Clean light grey-blue */
+    --bg-section: #EEF5F9;         /* Soft section background */
+    --bg-card: #FFFFFF;            /* Pure white surface */
+    --bg-glass: rgba(255, 255, 255, 0.75);
+    
+    /* Typography Colors */
+    --text-primary: #2E3440;      /* Deep slate gray */
+    --text-secondary: #5C677D;    /* Muted text gray */
+    --text-light: #ECEFF4;        /* Light background text */
+    
+    /* Structural Elements */
+    --border-color: #D8DEE9;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(46, 52, 64, 0.04);
+    --shadow-md: 0 6px 18px rgba(46, 52, 64, 0.06);
+    --shadow-lg: 0 12px 30px rgba(46, 52, 64, 0.09);
+    
+    /* Transitions */
+    --transition-fast: all 0.2s ease-in-out;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    --ft-navy: #0f172a;
+    --ft-slate: #1e293b;
+    --ft-cyan: #06b6d4;
+    --ft-cyan-glow: rgba(6, 182, 212, 0.4);
+    --ft-text: #94a3b8;
+    --ft-light: #f8fafc;
+}
+
+/* ==========================================================================
+   2. CORE RESETS & BASE STYLES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&family=Nunito:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main) !important;
+    color: var(--text-primary);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--color-primary);
+    transition: var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-hover);
+}
+
+.justify-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* ==========================================================================
+   3. NAVIGATION BAR & LOGO STYLING
+   ========================================================================== */
+.navbar {
+    background: rgba(248, 250, 252, 0.95) !important; /* Soft solid background without blur */
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    padding: 0.8rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    transition: var(--transition-smooth);
+}
+
+/* Base style for logo icon and "Intelli" text (Steel/Navy Blue) */
+.navbar-brand, 
+.navbar-brand span, 
+.navbar-brand i {
+    color: var(--color-primary) !important; /* #5E81AC (Pastel Steel Blue) */
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    text-decoration: none !important;
+   
+}
+
+/* Accent color for "Tool" text (Sky Blue) */
+.navbar-brand span.brand-accent,
+.brand-accent {
+    color: var(--color-primary) !important; /* #88C0D0 (Soft Sky Blue) */
+}
+
+/* Locks colors on hover so no color shift occurs */
+.navbar-brand:hover,
+.navbar-brand:hover span,
+.navbar-brand:hover i {
+    color: var(--color-primary) !important;
+}
+
+.navbar-brand:hover span.brand-accent {
+    color: var(--color-secondary) !important;
+}
+
+/* ==========================================================================
+   4. HERO CAROUSEL & BANNER (BLUR REMOVED)
+   ========================================================================== */
+.c-item {
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+
+.c-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* Clean image rendering with a subtle dark overlay for contrast */
+    filter: brightness(0.75) contrast(1.05); 
+    transition: transform 6s ease;
+}
+
+.c-item:hover .c-img {
+    transform: scale(1.02);
+   
+}
+
+/* Removed backdrop-filter (blur) & styled clear pastel text */
+.carousel-caption {
+    background: rgba(46, 52, 64, 0.55); /* Clean semi-transparent overlay without blur */
+    border: 1px solid rgba(216, 222, 233, 0.2);
+    border-radius: var(--border-radius-lg);
+    padding: 2.5rem;
+    max-width: 850px;
+    margin: 0 auto 3rem auto;
+    box-shadow: var(--shadow-lg);
+    
+}
+
+/* Heading styled in Soft Sky Blue Pastel */
+.carousel-caption h1 {
+    color: var(--color-secondary) !important; /* #88C0D0 (Soft Sky Blue) */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Subtitle styled in Soft Light Pastel Gray */
+.carousel-caption p {
+    color: var(--text-light) !important; /* #ECEFF4 */
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom Interactive Explore Button */
+.explore-btn-hover {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-top-right-radius: var(--border-radius-md);
+    border-bottom-left-radius: var(--border-radius-md);
+    transition: var(--transition-smooth);
+    color: #FFFFFF !important;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-hover));
+    box-shadow: 0 4px 15px rgba(94, 129, 172, 0.3);
+    text-decoration: none;
+    border: none;
+}
+
+.explore-btn-hover:after,
+.explore-btn-hover:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    border: 0px solid transparent;
+    transition: var(--transition-smooth);
+}
+
+.explore-btn-hover:after {
+    top: -2px;
+    left: -2px;
+    border-top: 2px solid var(--color-secondary);
+    border-left: 2px solid var(--color-secondary);
+}
+
+.explore-btn-hover:before {
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 2px solid var(--color-secondary);
+    border-right: 2px solid var(--color-secondary);
+}
+
+.explore-btn-hover:hover {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background: linear-gradient(135deg, var(--color-hover), var(--color-secondary));
+    box-shadow: 0 6px 20px rgba(136, 192, 208, 0.4);
+    transform: translateY(-2px);
+}
+
+.explore-btn-hover:hover:before,
+.explore-btn-hover:hover:after {
+    width: 100%;
+    height: 100%;
+    border-color: var(--color-secondary);
+}
+
+/* ==========================================================================
+   5. CARDS & DASHBOARD WIDGETS
+   ========================================================================== */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-secondary);
+}
+
+.card-header {
+    background-color: var(--bg-section);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: 1rem 1.25rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    padding: 0.75rem 1.25rem;
+}
+
+/* Metric / KPI Cards Customization */
+.card.bg-primary, .card.bg-secondary, .card.bg-success, .card.bg-warning, .card.bg-info {
+    border: none;
+    color: #FFFFFF !important;
+}
+
+.card.bg-primary {
+    background: linear-gradient(135deg, #5E81AC, #81A1C1) !important;
+}
+
+.card.bg-secondary {
+    background: linear-gradient(135deg, #88C0D0, #81A1C1) !important;
+}
+
+.card.bg-success {
+    background: linear-gradient(135deg, #A3BE8C, #8FBC8F) !important;
+}
+
+.card.bg-warning {
+    background: linear-gradient(135deg, #EBCB8B, #D08770) !important;
+}
+
+/* ==========================================================================
+   6. BUTTONS & CONTROLS
+   ========================================================================== */
+.btn {
+    font-weight: 600;
+    border-radius: var(--border-radius-sm);
+    padding: 0.55rem 1.25rem;
+    transition: var(--transition-smooth);
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-hover));
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(94, 129, 172, 0.25);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(135deg, var(--color-hover), var(--color-primary));
+    box-shadow: 0 4px 12px rgba(94, 129, 172, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-hover);
+    color: #FFFFFF;
+}
+
+.btn-success {
+    background-color: var(--color-accent);
+    color: #FFFFFF;
+}
+
+.btn-warning {
+    background-color: var(--color-highlight);
+    color: var(--text-primary);
+}
+
+.btn-outline-primary {
+    border: 1.5px solid var(--color-primary);
+    color: var(--color-primary);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   7. FORM INPUTS & CONTROL ELEMENTS
+   ========================================================================== */
+.form-control, .form-select {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-primary);
+    padding: 0.65rem 0.9rem;
+    transition: var(--transition-fast);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(136, 192, 208, 0.25);
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   8. DATA TABLES
+   ========================================================================== */
+.table-responsive {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.table {
+    margin-bottom: 0;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.table th {
+    background-color: var(--bg-section);
+    color: var(--text-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+}
+
+.table td {
+    padding: 0.9rem 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(238, 245, 249, 0.5);
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: rgba(136, 192, 208, 0.08);
+}
+
+/* ==========================================================================
+   9. BADGES & STATUS INDICATORS
+   ========================================================================== */
+.badge {
+    padding: 0.4em 0.75em;
+    font-weight: 600;
+    border-radius: 50rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+}
+
+.bg-success, .badge.bg-success {
+    background-color: rgba(163, 190, 140, 0.2) !important;
+    color: #4C566A !important;
+    border: 1px solid var(--color-accent);
+}
+
+.bg-warning, .badge.bg-warning {
+    background-color: rgba(235, 203, 139, 0.25) !important;
+    color: #4C566A !important;
+    border: 1px solid var(--color-highlight);
+}
+
+.bg-danger, .badge.bg-danger {
+    background-color: rgba(191, 97, 106, 0.15) !important;
+    color: #BF616A !important;
+    border: 1px solid #BF616A;
+}
+
+.bg-info, .badge.bg-info {
+    background-color: rgba(136, 192, 208, 0.2) !important;
+    color: #2E3440 !important;
+    border: 1px solid var(--color-secondary);
+}
+
+/* ==========================================================================
+   10. FOOTER & MISCELLANEOUS
+   ========================================================================== */
+footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 2.5rem 0 1.5rem 0;
+    margin-top: 4rem;
+}
+
+footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--color-primary);
+}
+
+.section-padding {
+    padding: 4rem 0;
+}
+
+.bg-light {
+    background-color: var(--bg-section) !important;
+}
+
+/* ==========================================================================
+   11. RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .c-item {
+        height: 500px;
+    }
+    
+    .carousel-caption {
+        padding: 1.5rem;
+        width: 90%;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 1.75rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .c-item {
+        height: 380px;
+    }
+    
+    .explore-btn-hover {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================================================
+  12  ADDITIONAL THEME STYLES (SERVICES & CONTACT SECTIONS)
+   ========================================================================== */
+:root {
+    --bg-section: #F8FAFC;
+    --color-primary: #5E81AC;
+    --color-secondary: #88C0D0;
+    --color-hover: #81A1C1;
+    --dark-slate: #2E3440;
+}
+
+/* Section Title Accent Line */
+.section-title {
+    color: var(--dark-slate);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    position: absolute;
+    bottom: -8px;
+    left: 25%;
+    border-radius: 2px;
+}
+
+.justify-text {
+    text-align: justify;
+}
+
+.color-primary {
+    color: var(--color-primary) !important;
+}
+
+.color-secondary {
+    color: var(--color-secondary) !important;
+}
+
+.bg-section {
+    background-color: var(--bg-section) !important;
+}
+
+.bg-dark-slate {
+    background-color: var(--dark-slate) !important;
+}
+
+/* Service Card Custom Hover Effects */
+.service-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid var(--border-color, #E5E9F0);
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-secondary);
+    box-shadow: 0 10px 25px rgba(94, 129, 172, 0.12);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(136, 192, 208, 0.15);
+    color: var(--color-primary);
+}
+
+.service-card:hover .service-icon {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    transition: var(--transition-smooth);
+}
+
+.str-footer {
+    background: linear-gradient(135deg, var(--ft-navy) 0%, var(--ft-slate) 100%);
+    color: var(--ft-text);
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Ambient Glow Animation background */
+.str-footer::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--ft-cyan-glow) 0%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+    animation: pulseGlow 8s infinite alternate ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(1) translate(0, 0); opacity: 0.5; }
+    100% { transform: scale(1.3) translate(50px, 30px); opacity: 0.9; }
+}
+
+/* Brand Section */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.2rem;
+}
+
+.footer-brand-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 20px var(--ft-cyan-glow);
+    transition: transform 0.4s ease;
+}
+
+.footer-brand:hover .footer-brand-icon {
+    transform: rotate(15deg) scale(1.05);
+}
+
+.footer-brand h4 {
+    color: var(--ft-light);
+    font-weight: 800;
+    margin: 0;
+    font-size: 1.25rem;
+    letter-spacing: -0.5px;
+}
+
+.footer-brand span {
+    display: block;
+    color: var(--ft-cyan);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Section Headlines */
+.footer-title {
+    color: var(--ft-light);
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 28px;
+    height: 3px;
+    background: var(--ft-cyan);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.footer-col:hover .footer-title::after {
+    width: 100%;
+}
+
+/* Links List */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--ft-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--ft-cyan);
+    transform: translateX(5px);
+}
+
+.footer-links a i {
+    font-size: 0.8rem;
+    color: var(--ft-cyan);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover i {
+    opacity: 1;
+    transform: translateX(2px);
+}
+
+/* Live Operational Pulse Badge */
+.live-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--ft-cyan);
+    margin-top: 1rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--ft-cyan);
+    border-radius: 50%;
+    position: relative;
+}
+
+.status-dot::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--ft-cyan);
+    border-radius: 50%;
+    animation: statusPulse 1.8s infinite ease-out;
+}
+
+@keyframes statusPulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Social & Partner Badges */
+.social-btn {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ft-light);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-btn:hover {
+    background: var(--ft-cyan);
+    color: var(--ft-navy);
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px var(--ft-cyan-glow);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.85rem;
+}
+
+.footer-bottom-links a {
+    color: var(--ft-text);
+    text-decoration: none;
+    margin-left: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--ft-cyan);
+}

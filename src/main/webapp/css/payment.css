@@ -1,0 +1,179 @@
+@charset "ISO-8859-1";
+
+/* ==========================================
+   YantraX - Payment Management
+========================================== */
+
+body{
+    background:#f5f7fb;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+/* Card */
+
+.card{
+    border:none;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+/* Header */
+
+.payment-header{
+
+    background:linear-gradient(90deg,#0d6efd,#20c997);
+    padding:14px 20px;
+
+}
+
+.payment-header h5{
+
+    font-size:18px;
+    font-weight:600;
+}
+
+/* Badge */
+
+.badge{
+
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Card Body */
+
+.card-body{
+
+    padding:35px;
+}
+
+/* Labels */
+
+label{
+
+    font-weight:600;
+    color:#333;
+    font-size:14px;
+}
+
+/* Input */
+
+.form-control,
+.form-select{
+
+    height:42px;
+    border-radius:8px;
+    border:1px solid #ced4da;
+    font-size:14px;
+}
+
+textarea.form-control{
+
+    height:auto;
+    resize:none;
+}
+
+/* Focus */
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:#0d6efd;
+    box-shadow:0 0 5px rgba(13,110,253,.25);
+
+}
+
+/* Readonly */
+
+input[readonly]{
+
+    background:#f8f9fa;
+    font-weight:600;
+}
+
+/* Buttons */
+
+.btn-success{
+
+    background:#198754;
+    border:none;
+    width:120px;
+    font-weight:600;
+}
+
+.btn-success:hover{
+
+    background:#157347;
+}
+
+.btn-secondary{
+
+    width:120px;
+    font-weight:600;
+}
+
+/* Image */
+
+.payment-image img{
+
+    max-width:100%;
+    max-height:220px;
+}
+
+.payment-image h5{
+
+    color:#666;
+    font-weight:600;
+    margin-top:20px;
+}
+
+.payment-image h1{
+
+    color:#198754;
+    font-size:50px;
+    font-weight:bold;
+}
+
+/* Card Shadow */
+
+.shadow-lg{
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12)!important;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .payment-image{
+
+        margin-top:40px;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .card-body{
+
+        padding:20px;
+    }
+
+    .btn{
+
+        width:100%;
+        margin-top:10px;
+    }
+
+    label{
+
+        margin-bottom:8px;
+    }
+
+}

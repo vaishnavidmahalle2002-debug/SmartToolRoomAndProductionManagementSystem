@@ -1,0 +1,136 @@
+@charset "ISO-8859-1";
+
+
+/* ==========================================
+   YantraX - Settings
+========================================== */
+
+body{
+    background:#f4f7fb;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+/* Card */
+
+.card{
+    border:none;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+/* Header */
+
+.setting-header{
+    background:linear-gradient(90deg,#0d6efd,#20c997);
+    padding:15px 20px;
+}
+
+.setting-header h5{
+    font-size:18px;
+    font-weight:600;
+}
+
+/* Badge */
+
+.badge{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+}
+
+/* Body */
+
+.card-body{
+    padding:35px;
+}
+
+/* Labels */
+
+label{
+    font-size:14px;
+    font-weight:600;
+    color:#333;
+}
+
+/* Inputs */
+
+.form-control{
+    height:42px;
+    border-radius:8px;
+    border:1px solid #ced4da;
+    font-size:14px;
+}
+
+.form-control:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 5px rgba(13,110,253,.25);
+}
+
+input[readonly]{
+    background:#f8f9fa;
+    font-weight:600;
+}
+
+/* Buttons */
+
+.btn-success{
+    width:150px;
+    font-weight:600;
+    border:none;
+}
+
+.btn-secondary{
+    width:120px;
+    font-weight:600;
+}
+
+/* Right Image */
+
+img{
+    max-height:250px;
+}
+
+h4{
+    font-weight:600;
+}
+
+p{
+    font-size:14px;
+}
+
+/* Shadow */
+
+.shadow-lg{
+    box-shadow:0 10px 25px rgba(0,0,0,.12)!important;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .card-body{
+        padding:25px;
+    }
+
+    img{
+        margin-top:40px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .btn{
+        width:100%;
+        margin-top:10px;
+    }
+
+    label{
+        margin-bottom:8px;
+    }
+
+}
